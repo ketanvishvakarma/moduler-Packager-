@@ -1,0 +1,54 @@
+from datetime import datetime
+import time
+import math
+
+def dt_operations():
+    while True:
+        print()
+        print("Datetime and Time Operations: ")
+        print("Display current date and time")
+        print("Calculate difference between two dates/times")
+        print("Format date into custom format")
+        print("Stopwatch")
+        print("Countdown Timer")
+        print("Back to main Menu")
+
+        choice=int(input("Enter your choice "))
+
+        if choice==1:
+            print(f"Current Date and Time :{datetime.now()}")
+
+        elif choice==2:
+            dt1=input("Enter the First Date (YYYY-MM-DD) :")
+            dt2=input("Enter the Second Date (YYYY-MM-DD) :")
+
+            dt1= datetime.strptime( "%Y-%m-%d",dt1)
+            dt2= datetime.strptime( "%Y-%m-%d",dt2)
+            
+            print(f"Difference: {abs(dt2-dt1)}")
+
+        elif choice==3:
+            print("select an option")
+            print("1. For Date")
+            print("2. For Time")
+
+            choice = int(input("Enter your choice: "))
+
+            if choice == 1:
+                current_date=datetime.now()
+                print(current_date.strftime("%Y-%m-%d"))
+
+            elif choice ==2:
+                current_time=datetime.now()
+                print(current_time.strftime("%H:%M:%S"))
+
+            else:
+                break
+
+        elif choice ==4:
+
+            start=time.time()
+            input("press enter to stop")
+            stop=time.time()
+            print(f"Your time is : {stop-start}")
+            
