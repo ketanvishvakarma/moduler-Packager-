@@ -2,6 +2,8 @@ from datetime import datetime
 import time
 import math
 from uuid import uuid4 
+import random
+import string
 
 def dt_operations():
     while True:
@@ -88,8 +90,71 @@ def math_operations():
             print(f"Compound Interest is {cp}")
 
         elif choice==3:
-            pass
+            value = float(input("Enter the value in degrees: "))
+            value = math.radians(value)
+
+            print(math.sin(value))
+            print(math.cos(value))
+
+        elif choice==4:
+            print("Select a shape:")
+            print("1. Circle")
+            print("2. Rectangle")
+
+            choice=int(input("Enter your choice: "))
+
+            if choice ==1 :
+                r=float(input("Enter the radius of the circle: "))
+                area=math.pi*(r**2)
+                print(f"Area of Circle: {area}")
+
+            elif choice==2:
+                l=float(input("Enter the length of the rectangle: "))
+                w=float(input("Enter the width of the rectangle: "))
+                area=l*w
+                print(f"Area of Rectangle: {area}")
+
+            else:
+                print("Invalid choice.")
+
+        elif choice==5:
+            break
 
 def uuid():
     id=uuid4()
     print(f"UUID: {id}")
+
+
+def random():
+    while True:
+        print()
+        print("Random Data Generation: ")
+        print("1. Generate Random number")
+        print("2. Generate Random list")
+        print("3. Generate Random password")
+        print("4. generate Random otp")
+        print("5. Back to Main Menu")
+
+        choice=int(input("Enter your choice "))
+
+        if choice==1:
+            num=random.randint(1, 100)
+            print(f"Random Number: {num}")
+
+        elif choice==2:
+            l=[10,20,30,40,50,60,70,80,90,100]
+            a=random.shuffle(l)
+            print(f"Random List: {l}")
+
+        elif choice==3:
+            len=int(input("Enter the length of the password: "))
+            characters=string.ascii_letters + string.punctuation + string.digits()
+            password="".join(random.choice(characters,k=len))
+            print(f"Random Password: {password}")
+
+        elif choice==4:
+            otp=random.randint(100000,999999)
+            print(f"Random OTP: {otp}")
+
+        elif choice==5:
+            break
