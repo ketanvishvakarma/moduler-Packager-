@@ -51,4 +51,36 @@ def dt_operations():
             input("press enter to stop")
             stop=time.time()
             print(f"Your time is : {stop-start}")
-            
+
+        elif choice ==5:
+            n=int(input("Enter the time in seconds for countdown: "))
+            while n>0:
+                print(n)
+                time.sleep(1)
+                n-=1
+            print("Countdown finished!")
+
+        elif choice==6:
+            break
+
+def math_operations():
+    while True:
+        print()
+        print("Mathematical Operations: ")
+        print("1. Calculate Factorial")
+        print("2. Solve Compound Interest")
+        print("3. trigonometric calculations")
+        print("4. Area of Geometric Shapes")
+        print("5. Back to Main Menu")
+
+        choice=int(input("Enter your choice "))
+
+        if choice==1:
+            n=int(input("Enter a number to calculate factorial: "))
+            print(f"Factorial of {n} is {math.factorial(n)}")
+
+        elif choice==2:
+            money= int(input("Enter your money"))
+            year=int(input("Enter your year"))
+            rate=int(input("Enter your rate"))
+            cp=money*(m)
