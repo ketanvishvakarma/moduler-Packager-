@@ -1,6 +1,7 @@
 from datetime import datetime
 import time
 import math
+from uuid import uuid4 
 
 def dt_operations():
     while True:
@@ -83,4 +84,12 @@ def math_operations():
             money= int(input("Enter your money"))
             year=int(input("Enter your year"))
             rate=int(input("Enter your rate"))
-            cp=money*(m)
+            cp=money*(1+(rate/100))**year
+            print(f"Compound Interest is {cp}")
+
+        elif choice==3:
+            pass
+
+def uuid():
+    id=uuid4()
+    print(f"UUID: {id}")
